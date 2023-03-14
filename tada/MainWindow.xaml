@@ -1,0 +1,32 @@
+﻿<Window x:Class="tada.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tada"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dg_info"
+                  IsReadOnly="True">
+            <DataGridTextColumn Header="Пиво"
+                                Binding="{Binding Name}"/>
+            <DataGridTextColumn Header="Процент"
+                                Binding="{Binding Percent}"/>
+            <DataGridTemplateColumn>
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Button x:Name="btn_delete"
+                                    Click="btn_delete_Click"
+                                    Content="Удалить"/>
+                            <Button x:Name="btn_add"
+                                    Content="Добавить"
+                                    Click="btn_add_Click"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid>
+    </Grid>
+</Window>
